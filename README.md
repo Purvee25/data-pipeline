@@ -14,3 +14,8 @@ from pipeline import DataPipeline
 p = DataPipeline()
 p.extract_csv("input.csv").filter(lambda r: r["age"] > 18).aggregate("city", "count").load_csv("output.csv")
 ```
+
+## Testing
+```bash
+python -m pytest tests/
+```
